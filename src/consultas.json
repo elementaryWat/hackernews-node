@@ -1,0 +1,31 @@
+
+query{
+    feed{
+      description
+    }
+  }
+
+mutation{
+    post(
+      description:"La mejor pagina de cursos",
+      url:"https://www.udacity.com/"
+    ){
+      description
+    }
+  }
+
+mutation{
+  updateLink(
+    id:"link-0",description:"La mejor pagina de cursos",url:"https://www.udacity.com/"
+  ){
+    description
+  }
+}
+
+mutation{
+    deleteLink(
+      id:"link-0"
+    ){
+      description,url
+    }
+  }
