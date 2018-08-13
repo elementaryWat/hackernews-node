@@ -4,11 +4,15 @@
   "description": "Tutorial to learn how to build an idiomatic GraphQL server",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Augusto Romero",
   "license": "ISC",
   "dependencies": {
-    "graphql-yoga": "^1.15.0"
+    "bcryptjs": "^2.4.3",
+    "graphql-yoga": "^1.15.0",
+    "jsonwebtoken": "^8.3.0",
+    "prisma-binding": "^2.1.3"
   }
 }
