@@ -3,8 +3,10 @@ const APP_SECRET = "MyFirstGRAPHQlAPI";
 
 function getUserById(context) {
   const Authorization = context.request.get("Authorization");
+  
   if (Authorization) {
     const token = Authorization.replace("Bearer ", "");
+    console.log(token);
     const { user_id } = jwt.verify(token, APP_SECRET);
     return user_id;
   }

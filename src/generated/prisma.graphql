@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/augusto-romero-ea94f2/firstGRAPHQLservice/hackerNews
-# timestamp: Tue Aug 07 2018 10:56:38 GMT-0300 (Hora estándar de Argentina)
+# timestamp: Wed Oct 17 2018 11:24:43 GMT-0300 (GMT-03:00)
 
 type AggregateLink {
   count: Int!
@@ -22,7 +22,7 @@ type Link implements Node {
   updatedAt: DateTime!
   description: String!
   url: String!
-  postedBy(where: UserWhereInput): User
+  postedBy: User
 }
 
 """A connection to a list of items."""

@@ -56,8 +56,23 @@ function post(root, args, context , info){
     },info)
 }
 
+function updateLink(root, args, context, info){
+    const user_id= getUserById(context);
+
+    return context.db.mutation.updateLink({
+        data:{
+          description:args.description,
+          url:args.url,
+        },
+        where:{
+            id:args.id
+        }
+    },info)
+}
+
 module.exports={
-    post,
     login,
-    signUp
+    signUp,
+    post,
+    updateLink
 }

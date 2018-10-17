@@ -3,6 +3,7 @@ const { Prisma } = require('prisma-binding');
 const Query =require('../resolvers/Query')
 const Mutation =require('../resolvers/Mutation');
 const AuthPayload =require('../resolvers/AuthPayload');
+var cors = require('cors');
 
 const resolvers = {
  Query,
@@ -25,6 +26,10 @@ const server = new GraphQLServer({
   })
 });
 
-server.start(() => {
+const options = {
+  cors:cors()
+}
+
+server.start((options) => {
   console.log("El servidor esta corriendo en localhost:4000");
 });
