@@ -6,8 +6,8 @@ function getUserById(context) {
   
   if (Authorization) {
     const token = Authorization.replace("Bearer ", "");
-    console.log(token);
     const { user_id } = jwt.verify(token, APP_SECRET);
+    console.log(user_id);
     return user_id;
   }
   throw new Error("No Autenticado");

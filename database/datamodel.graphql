@@ -5,11 +5,20 @@ type Link {
   description: String!
   url: String!
   postedBy: User
+  votes: [Vote!]! @relation(name: "VotesByLink")
 }
+
 type User {
   id: ID! @unique
   name: String!
   email: String! @unique
   password: String!
   links: [Link!]!
+  votes: [Vote!]! @relation(name: "VotesByUser")
+}
+
+type Vote{
+  id:ID! @unique
+  user:User! @relation(name: "VotesByUser")
+  link:Link! @relation(name: "VotesByLink")
 }

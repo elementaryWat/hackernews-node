@@ -8,6 +8,8 @@ type Query {
 type Mutation {
   post(url: String!, description: String!): Link!
   updateLink(id:ID!,url: String!, description: String!): Link
+  createVote(link_id: String!): Vote
+  deleteVote(vote_id: ID!): Vote
   signUp(name:String!, password:String! ,email:String!):AuthPayload
   login(email:String!, password:String!): AuthPayload
 }
@@ -22,4 +24,13 @@ type User{
   name:String!
   email:String!
   links:[Link!]!
+  votes:[Vote!]!
 }
+
+type Vote{
+  id:ID!
+  user:User!
+  link:Link!
+}
+
+

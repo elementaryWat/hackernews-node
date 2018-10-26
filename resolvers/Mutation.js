@@ -70,9 +70,31 @@ function updateLink(root, args, context, info){
     },info)
 }
 
+function createVote(root, args, context, info){
+    const user_id= getUserById(context);
+
+    return context.db.mutation.createVote({
+        data:{
+          user:{connect:{id:user_id}},
+          link:{connect:{id:args.link_id}}
+        }
+    },info)
+}
+
+function deleteVote(root, args, context, info){
+
+    return context.db.mutation.deleteVote({
+        where:{
+          id:args.vote_id
+        }
+    },info)
+}
+
 module.exports={
     login,
     signUp,
     post,
-    updateLink
+    updateLink,
+    createVote,
+    deleteVote
 }
