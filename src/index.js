@@ -30,6 +30,6 @@ const options = {
   cors:cors()
 }
 
-server.start((options) => {
+server.start(() => {
   console.log("El servidor esta corriendo en localhost:4000");
 });
